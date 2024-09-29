@@ -1,0 +1,16 @@
+name: playground
+services:
+  fabric_db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - fabric_db_data:/var/lib/postgresql/data
+
+volumes:
+  fabric_db_data:
